@@ -1,58 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
+import Header from '../components/Header'
+import MemoListItem from '../components/MemoListItem'
+import AddButton from '../components/AddButton'
 
 const Index = (): JSX.Element => {
   return (
     <View style={styles.container}>
+      <Header />
       <View>
-        <View>
-          <Text>Memo App</Text>
-          <Text>Sign out</Text>
-        </View>
+        <MemoListItem />
+        <MemoListItem />
+        <MemoListItem />
       </View>
-      <View>
-        <View>
-          <View>
-            <Text>shopping list</Text>
-            <Text>date and time</Text>
-          </View>
-          <View>
-            <Text>X</Text>
-          </View>
-        </View>
-
-        <View>
-          <View>
-            <Text>shopping list</Text>
-            <Text>date and time</Text>
-          </View>
-          <View>
-            <Text>X</Text>
-          </View>
-        </View>
-
-        <View>
-          <View>
-            <Text>shopping list</Text>
-            <Text>date and time</Text>
-          </View>
-          <View>
-            <Text>X</Text>
-          </View>
-        </View>
-
-        <View>
-          <View>
-            <Text>shopping list</Text>
-            <Text>date and time</Text>
-          </View>
-          <View>
-            <Text>X</Text>
-          </View>
-        </View>
-      </View>
-      <View>
-        <Text>+</Text>
-      </View>
+      <AddButton>+</AddButton>
     </View>
   )
 }
@@ -60,8 +20,7 @@ const Index = (): JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#f5fffa',
   },
 })
 
