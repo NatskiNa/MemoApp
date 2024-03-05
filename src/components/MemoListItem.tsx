@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { Entypo } from '@expo/vector-icons'
 
 const MemoListItem = (): JSX.Element => {
   return (
@@ -7,9 +8,9 @@ const MemoListItem = (): JSX.Element => {
         <Text style={styles.memoTitle}>shopping list</Text>
         <Text style={styles.memoDate}>date and time</Text>
       </View>
-      <View>
-        <Text>X</Text>
-      </View>
+      <TouchableOpacity>
+        <Entypo name="cross" size={30} color="#d3d3d3" />
+      </TouchableOpacity>
     </View>
   )
 }
