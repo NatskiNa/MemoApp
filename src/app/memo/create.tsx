@@ -1,16 +1,18 @@
 import { View, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native'
-import Header from '../../components/Header'
 import CircleButton from '../../components/CircleButton'
 import { Entypo } from '@expo/vector-icons'
+import { router } from 'expo-router'
 
+const handlePress = (): void => {
+  router.back()
+}
 const Create = (): JSX.Element => {
   return (
     <KeyboardAvoidingView behavior="height" style={styles.container}>
-      <Header />
       <View style={styles.inputContainer}>
         <TextInput multiline style={styles.input} value="" />
       </View>
-      <CircleButton>
+      <CircleButton onPress={handlePress}>
         <Entypo name="check" size={36} color="#fffafa" />
       </CircleButton>
     </KeyboardAvoidingView>

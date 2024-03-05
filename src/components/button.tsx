@@ -2,7 +2,7 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
 interface Props {
   label: string
-  onPress: () => void
+  onPress?: () => void //not returning anything
 }
 
 const Button = (props: Props): JSX.Element => {
