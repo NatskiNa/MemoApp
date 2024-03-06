@@ -8,6 +8,7 @@ import {
 
 import Button from '../../components/button'
 import { Link, router } from 'expo-router'
+import { useState } from 'react'
 
 const handlePress = (): void => {
   //login
@@ -15,12 +16,34 @@ const handlePress = (): void => {
 }
 
 const Login = (): JSX.Element => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
         <Text style={styles.title}>Login</Text>
-        <TextInput style={styles.input} value="Email Address" />
-        <TextInput style={styles.input} value="Password" />
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={(text) => {
+            setEmail(text)
+          }}
+          autoCapitalize="none"
+          keyboardType="email-address"
+          placeholder="email address"
+          textContentType="emailAddress"
+        />
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={(text) => {
+            setPassword(text)
+          }}
+          autoCapitalize="none"
+          secureTextEntry
+          placeholder="password"
+          textContentType="password"
+        />
         <Button label="Submit" onPress={handlePress} />
         <View style={styles.footer}>
           <Text style={styles.footerRegister}>Not registered?</Text>
