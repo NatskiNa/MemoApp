@@ -64,7 +64,7 @@ const Signup = (): JSX.Element => {
         />
         <View style={styles.footer}>
           <Text style={styles.footerRegister}>Already registered?</Text>
-          <Link href="/auth/login" asChild>
+          <Link href="/auth/login" asChild replace>
             <TouchableOpacity>
               <Text style={styles.footerSignup}>Login</Text>
             </TouchableOpacity>
