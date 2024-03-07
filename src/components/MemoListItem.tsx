@@ -1,10 +1,33 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native'
 import { Entypo } from '@expo/vector-icons'
 import { Link } from 'expo-router'
+import { doc, deleteDoc } from 'firebase/firestore'
+import { auth, db } from '../config'
 import { type Memo } from '../types/memo'
 
 interface Props {
   memo: Memo
+}
+
+const handlePress = (id: string): void => {
+  if (auth.currentUser === null) {
+    return
+  }
+  const ref = doc(db, `users/${auth.currentUser.uid}/memos`, id)
+  Alert.alert('delete your memo', 'OK to delete?', [
+    {
+      text: 'Cancel',
+    },
+    {
+      text: 'Delete',
+      style: 'destructive',
+      onPress: () => {
+        deleteDoc(ref).catch(() => {
+          Alert.alert('Cannot delete your memo')
+        })
+      },
+    },
+  ])
 }
 
 const MemoListItem = (props: Props): JSX.Element | null => {
@@ -15,7 +38,7 @@ const MemoListItem = (props: Props): JSX.Element | null => {
   }
   const dateString = updatedAt.toDate().toLocaleString('en-US')
   return (
-    <Link href="/memo/detail" asChild>
+    <Link href={{ pathname: '/memo/detail', params: { id: memo.id } }} asChild>
       <TouchableOpacity style={styles.memoListItem}>
         <View>
           <Text numberOfLines={1} style={styles.memoTitle}>
@@ -23,7 +46,11 @@ const MemoListItem = (props: Props): JSX.Element | null => {
           </Text>
           <Text style={styles.memoDate}>{dateString}</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            handlePress(memo.id)
+          }}
+        >
           <Entypo name="cross" size={30} color="#d3d3d3" />
         </TouchableOpacity>
       </TouchableOpacity>
