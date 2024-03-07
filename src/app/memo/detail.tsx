@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import { useState, useEffect, MemoExoticComponent } from 'react'
+import { useState, useEffect } from 'react'
 import CircleButton from '../../components/CircleButton'
 import { Foundation } from '@expo/vector-icons'
 import { router, useLocalSearchParams } from 'expo-router'

@@ -1,6 +1,11 @@
-import { View, TextInput, StyleSheet, Alert } from 'react-native'
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  Alert,
+  KeyboardAvoidingView,
+} from 'react-native'
 import CircleButton from '../../components/CircleButton'
-import KeyboardAvoidingView from '../../components/KeyboardAvoidingView'
 import { Entypo } from '@expo/vector-icons'
 import { router, useLocalSearchParams } from 'expo-router'
 import { useEffect, useState } from 'react'
@@ -45,7 +50,7 @@ const Edit = (): JSX.Element => {
   }, [])
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <KeyboardAvoidingView behavior="height" style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
           multiline
