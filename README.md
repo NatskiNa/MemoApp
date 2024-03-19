@@ -1,1 +1,2 @@
-![iOS-memoApp](https://github.com/NatskiNa/MemoApp/assets/143272547/8352229d-28f7-40e8-a574-7b481956464f)
+
+![Screenshot 2024-03-19 at 12 19 03 PM](https://github.com/NatskiNa/MemoApp/assets/143272547/a7067a55-29da-4d8f-af11-9dadcd7efbe3)
