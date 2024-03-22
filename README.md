@@ -1,1 +1,2 @@
-![MemoApp](https://github.com/NatskiNa/MemoApp/assets/143272547/eec38582-484f-4819-894f-045e037938e5)
+
+![MemoApp](https://github.com/NatskiNa/MemoApp/assets/143272547/58b2e9fc-d8e1-422f-97dc-0a26e401a214)
